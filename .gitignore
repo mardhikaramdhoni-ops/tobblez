@@ -2,4 +2,7 @@
 venv/
 .venv/
 __pycache__/
+
+# SQLite Database
+chat_history.db
 *.db
