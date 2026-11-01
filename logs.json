@@ -1,0 +1,87 @@
+[
+    {
+        "user": "toblez",
+        "prompt": "Apa itu RAG?",
+        "response": "RAG adalah Retrieval-Augmented Generation untuk menggabungkan search dengan LLM."
+    },
+    {
+        "user": "toblez",
+        "prompt": "Gimana cara fine-tuning?",
+        "response": "Fine-tuning dilakukan dengan melatih ulang model menggunakan dataset spesifik."
+    },
+    {
+        "user": "admin",
+        "prompt": "Bagaimana cara deployment?",
+        "response": "Deployment bisa menggunakan Docker dan dieksekusi di cloud server."
+    },
+    {
+        "user": "toblez",
+        "prompt": "Apa itu RAG?",
+        "response": "RAG adalah Retrieval-Augmented Generation untuk menggabungkan search dengan LLM."
+    },
+    {
+        "user": "toblez",
+        "prompt": "Gimana cara fine-tuning?",
+        "response": "Fine-tuning dilakukan dengan melatih ulang model menggunakan dataset spesifik."
+    },
+    {
+        "user": "admin",
+        "prompt": "Bagaimana cara deployment?",
+        "response": "Deployment bisa menggunakan Docker dan dieksekusi di cloud server."
+    },
+    {
+        "user": "Toblez-Agent",
+        "prompt": "Berikan aku saran hari ini!",
+        "response": "Some of life's best lessons are learnt at the worst times."
+    },
+    {
+        "user": "Toblez-Agent",
+        "prompt": "Berikan aku saran hari ini!",
+        "response": "Step 1. Give a shit. Step 2. Don't be a dick. Step 3. Know when to let go."
+    },
+    {
+        "user": "Curhat-Bot",
+        "prompt": "Aku lagi overthinking nih bro...",
+        "response": "If it ain't broke don't fix it."
+    },
+    {
+        "user": "Karir-Coach",
+        "prompt": "Gimana caranya biar sukses di dunia software engineer?",
+        "response": "A problem shared is a problem halved."
+    },
+    {
+        "user": "Curhat-Bot",
+        "prompt": "Aku lagi overthinking nih bro...",
+        "response": "Cars are bad investments."
+    },
+    {
+        "user": "Karir-Coach",
+        "prompt": "Gimana caranya biar sukses di dunia software engineer?",
+        "response": "Don't give to others advice which you wouldn't follow."
+    },
+    {
+        "user": "Toblez-Agent",
+        "prompt": "Berikan aku saran hari ini!",
+        "response": "Mercy is the better part of justice."
+    },
+    {
+        "user": "Toblez-Agent",
+        "prompt": "Berikan aku saran hari ini!",
+        "response": "It's unlucky to be superstitious."
+    },
+    {
+        "user": "Toblez-Secure-Bot",
+        "prompt": "Aku butuh motivasi hari ini bro...",
+        "response": "Everything in moderation, including moderation itself."
+    },
+    {
+        "user": "Curhat-Bot",
+        "prompt": "Aku lagi overthinking nih bro...",
+        "response": "Everyone has their down days. Don't take it out on innocent bystanders."
+    },
+    {
+        "user": "Karir-Coach",
+        "prompt": "Gimana caranya biar sukses di dunia software engineer?",
+        "response": "Exercise in the rain can really make you feel alive."
+    }
+]
