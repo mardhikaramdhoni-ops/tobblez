@@ -3,7 +3,8 @@ import platform
 import os
 from datetime import datetime
 from config import logger
-
+from tavily import TavilyClient
+from config import TAVILY_API_KEY
 # =====================================================
 # 1. TOOL DEFINITIONS (Skema yang dikirim ke Groq)
 # =====================================================
@@ -77,6 +78,36 @@ TOOL_DEFINITIONS = [
             "description": "Dapatkan informasi sistem komputer (OS, Python Version, CPU).",
             "parameters": {"type": "object", "properties": {}, "required": []}
         }
+    },
+
+    # =========================================================
+    # 🌐 FITUR BARU v1.1 — Web Search Tool
+    # =========================================================
+    {
+        "type": "function",
+        "function": {
+            "name": "web_search",
+            "description": (
+                "Cari informasi real-time dari internet menggunakan DuckDuckGo. "
+                "Gunakan tool ini saat user bertanya tentang berita terkini, harga saat ini, "
+                "cuaca, event terbaru, atau informasi yang membutuhkan akses internet. "
+                "JANGAN gunakan untuk pengetahuan umum yang sudah kamu ketahui."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Kata kunci pencarian. Buat spesifik dan ringkas."
+                    },
+                    "max_results": {
+                        "type": "integer",
+                        "description": "Jumlah maksimal hasil pencarian (default: 3, max: 5)."
+                    }
+                },
+                "required": ["query"]
+            }
+        }
     }
 ]
 
@@ -133,9 +164,53 @@ def execute_tool(tool_name: str, arguments: dict, memory) -> str:
             ]
             return "\n".join(info)
 
+        # 🌐 FITUR BARU v1.1
+        elif tool_name == "web_search":
+            query = arguments.get("query", "")
+            max_results = arguments.get("max_results", 3)
+            return web_search(query=query, max_results=max_results)
+
         else:
             return f"Error: Tool '{tool_name}' tidak ditemukan."
 
     except Exception as e:
         logger.error(f"Error eksekusi tool [{tool_name}]: {e}")
         return f"Gagal menjalankan {tool_name}: {str(e)}"
+
+
+# =========================================================
+# 🌐 FITUR v1.1 — Web Search Implementation (Tavily API)
+# =========================================================
+def web_search(query: str, max_results: int = 3) -> str:
+    """
+    Mencari informasi real-time dari internet via Tavily API.
+    """
+    try:
+        if not TAVILY_API_KEY:
+            return "⚠️ Error: TAVILY_API_KEY belum di-set di file .env!"
+
+        client = TavilyClient(api_key=TAVILY_API_KEY)
+        response = client.search(query=query, max_results=max_results)
+
+        results = response.get("results", [])
+
+        if not results:
+            return f"Tidak ditemukan hasil pencarian untuk '{query}'."
+
+        output = []
+        for i, r in enumerate(results, 1):
+            title = r.get("title", "No Title")
+            url = r.get("url", "No URL")
+            content = r.get("content", "No content available.")
+            output.append(
+                f"[{i}] {title}\n"
+                f"    🔗 {url}\n"
+                f"    📝 {content}"
+            )
+
+        logger.info(f"Tavily Search berhasil: '{query}' → {len(results)} hasil")
+        return "\n\n".join(output)
+
+    except Exception as e:
+        logger.error(f"Tavily Search error: {e}")
+        return f"⚠️ Gagal melakukan pencarian web: {str(e)}"

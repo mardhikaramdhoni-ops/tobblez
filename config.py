@@ -12,6 +12,7 @@ load_dotenv()
 # Konfigurasi API
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")  # ← TAMBAHIN DI SINI BRO!
 
 # Setup Folder buat simpan data (Database & Log)
 DATA_DIR = "data"
