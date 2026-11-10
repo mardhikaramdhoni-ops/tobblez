@@ -12,13 +12,12 @@ load_dotenv()
 # ==========================================
 class LLMAgent:
 
-    # __init__ TIDAK nerima parameter 'nama' lagi!
-    # Nama diambil otomatis dari file .env
+
     def __init__(self, role):
         self.nama = os.getenv("AGENT_NAME")
         self.role = role
 
-    # Method ambil_advice: URL-nya dari .env, BUKAN hardcoded
+
     def ambil_advice(self):
         url = os.getenv("API_URL")
         try:
@@ -31,7 +30,7 @@ class LLMAgent:
         except Exception as e:
             return f"Error koneksi ke API: {e}"
 
-    # Method log_percakapan: sama kayak Modul 8
+
     def log_percakapan(self, prompt, response):
         log_baru = {"user": self.nama, "prompt": prompt, "response": response}
 
@@ -45,7 +44,7 @@ class LLMAgent:
         with open("logs.json", "w") as file:
             json.dump(daftar_log, file, indent=4)
 
-    # Method tanya: orkestrator utama
+
     def tanya(self, user_prompt):
         print(
             f"\n🤖 [{self.nama} | Role: {self.role}] sedang memproses..."

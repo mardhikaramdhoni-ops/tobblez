@@ -83,5 +83,15 @@
         "user": "Karir-Coach",
         "prompt": "Gimana caranya biar sukses di dunia software engineer?",
         "response": "Exercise in the rain can really make you feel alive."
+    },
+    {
+        "user": "Toblez-Secure-Bot",
+        "prompt": "Aku butuh motivasi hari ini bro...",
+        "response": "Don't try and bump start a motorcycle on an icy road."
+    },
+    {
+        "user": "Toblez-Secure-Bot",
+        "prompt": "Aku butuh motivasi hari ini bro...",
+        "response": "You have as many hours in a day as the people you admire most."
     }
 ]

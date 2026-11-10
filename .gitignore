@@ -1,8 +1,22 @@
+# API Key & Secrets (WAJIB BANGET!)
 .env
+
+# Virtual Environment
 venv/
 .venv/
-__pycache__/
+env/
 
-# SQLite Database
-chat_history.db
+# Python Cache
+__pycache__/
+*.pyc
+
+# Database (Biar chat history lu tetep lokal di PC lu aja)
 *.db
+chat_history.db
+
+# Logs & Temporary Files
+*.log
+logs.json
+
+# IDE Settings (Opsional, biar settingan VS Code lu gak ikut ke push)
+.vscode/
