@@ -22,3 +22,6 @@ logs.json
 .vscode/
 
 chroma_db/
+
+# Editor settings
+.vscode/
