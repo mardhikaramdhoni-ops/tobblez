@@ -20,3 +20,5 @@ logs.json
 
 # IDE Settings (Opsional, biar settingan VS Code lu gak ikut ke push)
 .vscode/
+
+chroma_db/
