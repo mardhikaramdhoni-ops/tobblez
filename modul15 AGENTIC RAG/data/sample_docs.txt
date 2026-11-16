@@ -1,0 +1,5 @@
+Docker adalah platform yang memungkinkan developer untuk membungkus aplikasi beserta semua dependensinya ke dalam sebuah unit standar yang disebut container. Dengan Docker, aplikasi bisa berjalan konsisten di environment mana saja, baik itu di laptop developer, server testing, maupun server production.
+
+MLOps (Machine Learning Operations) adalah praktik untuk mempermudah dan mengotomatisasi siklus hidup model machine learning. MLOps menggabungkan Machine Learning, DevOps, dan Data Engineering. Tujuannya adalah agar model ML bisa di-deploy ke production dengan cepat, aman, dan mudah dimonitor.
+
+CI/CD singkatan dari Continuous Integration dan Continuous Deployment. CI/CD adalah metode otomatisasi dalam pengembangan software di mana setiap perubahan kode akan otomatis di-build, di-test, dan di-deploy ke server. Hal ini mengurangi bug dan mempercepat rilis fitur baru. 

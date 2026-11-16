@@ -1,0 +1,16 @@
+# SQLite Database
+*.db
+chat_history.db
+
+# Vector DB
+chroma_db/
+
+# Virtual Environment & Env
+.venv/
+.env
+
+# Cache
+__pycache__/
+
+# Editor configuration
+.vscode/
